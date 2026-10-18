@@ -47,10 +47,34 @@ variable "existing_workspace_name" {
   description = "Existing Log Analytics Workspace Name."
   type        = string
   default     = null
+
+  validation {
+    condition = (
+      var.create_workspace ||
+      (
+        var.existing_workspace_name != null &&
+        trim(var.existing_workspace_name) != ""
+      )
+    )
+
+    error_message = "existing_workspace_name must be provided when create_workspace is false."
+  }
 }
 
 variable "existing_workspace_rg" {
   description = "Existing Log Analytics Workspace Resource Group."
   type        = string
   default     = null
+
+  validation {
+    condition = (
+      var.create_workspace ||
+      (
+        var.existing_workspace_rg != null &&
+        trim(var.existing_workspace_rg) != ""
+      )
+    )
+
+    error_message = "existing_workspace_rg must be provided when create_workspace is false."
+  }
 }

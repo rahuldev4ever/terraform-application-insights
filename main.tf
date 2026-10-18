@@ -96,7 +96,7 @@ resource "azurerm_application_insights" "main" {
  #   azurerm_application_insights.main.id
  # ]
 
-  tags = {
-    createdBy = "terraform"
-  }
-}
+ # tags = {
+  #  createdBy = "terraform"
+  #}
+#}

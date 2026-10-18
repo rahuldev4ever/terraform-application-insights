@@ -53,7 +53,7 @@ variable "existing_workspace_name" {
       var.create_workspace ||
       (
         var.existing_workspace_name != null &&
-        trim(var.existing_workspace_name) != ""
+        trimspace(var.existing_workspace_name) != ""
       )
     )
 
@@ -71,7 +71,7 @@ variable "existing_workspace_rg" {
       var.create_workspace ||
       (
         var.existing_workspace_rg != null &&
-        trim(var.existing_workspace_rg) != ""
+        trimspace(var.existing_workspace_rg) != ""
       )
     )
 
